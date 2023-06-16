@@ -27,7 +27,7 @@ for name_module, respons, module_info in cogs.loadcogs():
         "['loadCogs'] %s is %s" % (name_module, "Done" if respons else f"Error \n - {module_info}") 
     )
 
-aiogram.executor.start_polling(self.core_dp, skip_updates=True, on_startup=self.on_startup)
+aiogram.executor.start_polling(self.core_dp, skip_updates=True, on_startup=on_startup)
 ```
 
 In the index.py file, instances of the Bot and Dispatcher classes are created, and then cogs are loaded and registered using the LoadCogs class. Information about the result of each loaded cog is printed. The message listening loop is started using the start_polling function.
