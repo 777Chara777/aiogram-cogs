@@ -19,9 +19,11 @@ core_dp = aiogram.Dispatcher(self.core_aiobot)
 
 cogs = aiocogs.LoadCogs(self, "cogs/")
 
+async def on_startup(_):
+    print('Hi i am Work :)')
+
 for name_module, respons, module_info in cogs.loadcogs():
-    logger.log("INFO" if respons else "WARNING", \
-        logger._core.options, \
+    print("INFO" if respons else "WARNING",
         "['loadCogs'] %s is %s" % (name_module, "Done" if respons else f"Error \n - {module_info}") 
     )
 
@@ -34,6 +36,7 @@ In the index.py file, instances of the Bot and Dispatcher classes are created, a
 ### In the file `cogs_test.py`:
 
 ```py
+from aiogram import types
 from aiogram_cogs.cogs import RegisterCogs
 
 dp = RegisterCogs()
