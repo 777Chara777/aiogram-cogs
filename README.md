@@ -20,7 +20,7 @@ core_dp = aiogram.Dispatcher(self.core_aiobot)
 cogs = aiocogs.LoadCogs(self, "cogs/")
 
 async def on_startup(_):
-    print('Hi i am Work :)')
+    print('Hi i am Working :)')
 
 for name_module, respons, module_info in cogs.loadcogs():
     print("INFO" if respons else "WARNING",
